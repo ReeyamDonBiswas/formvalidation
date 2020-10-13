@@ -1,0 +1,93 @@
+<body>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<div class="container">
+
+  
+    <h1>Form Validation <sup><i class="fab fa-diaspora" >	</i></sup></h1>
+    
+    
+  
+    <form [formGroup]="loginFrom" (ngSubmit)="collectData()">
+      <div class="form-group">
+        
+        <input type="text" class="form-control " name="AssociateName" formControlName="AssociateName" placeholder="Associate Name" >
+        <div *ngIf="AssociateName.invalid&& AssociateName.touched">
+          <div class="error" *ngIf="AssociateName.errors.required">Please enter the Associate
+            Name.</div>
+            <div class="error" *ngIf="AssociateName.errors.maxlength || AssociateName.errors.minlength ">Accepts Alphabets, space &
+              Min 5 to Max 30 Char</div> 
+        </div>
+       
+              
+       
+        
+      </div>
+      <div class="form-group">
+        
+        <input type="text" class="form-control" name="AssociateId " formControlName="AssociateId" placeholder="Associate ID">
+        <div  *ngIf="AssociateId.invalid && AssociateId.touched">
+          <div class="error"  *ngIf="AssociateId.errors.required">Please enter the Assosiate id.</div>
+          <div class="error" *ngIf="AssociateId.errors.minlength||AssociateId.errors.maxlength">Invalid Associate Id</div>
+        </div>
+           
+      </div>
+      <div class="form-group">
+        
+        <input type="text" class="form-control" name="ProjectId" formControlName="ProjectId" placeholder="Project ID">
+        <div *ngIf="ProjectId.invalid&& ProjectId.touched">
+          <div class="error"  *ngIf="ProjectId.errors.required">Please enter the Project id.</div>
+          <div class="error"  *ngIf="ProjectId.errors.minlength||ProjectId.errors.maxlength">Invalid Associate Id</div>
+  
+        </div>
+      </div>
+      
+      
+        <br>
+         
+       
+        <br>
+        <div class="form-group">
+        
+            <input type="email" class="form-control" name="email" formControlName="emailname" placeholder="Enter email">
+            <span class="error" *ngIf="emailname.invalid && emailname.touched">Email is not valid</span>
+           
+                
+        
+              
+          </div>
+  
+        
+        
+        <br>
+        <div class="form-group">
+        
+            <input type="password" class="form-control" name="password" formControlName="Passwordname" placeholder="Enter The password">
+            <span class="error" *ngIf="Passwordname.invalid && Passwordname.touched">password is not valid and need password nore the 10 digit</span>
+          </div>
+          <div class="form-group">
+        
+            <input type="password" class="form-control" name="password" formControlName="Passwordnamecom" placeholder="Confirm password">
+            <span class="error" *ngIf="Passwordnamecom.invalid && Passwordnamecom.touched">password is not valid and need password nore the 10 digit</span>
+          </div>
+        <div class="form-group">
+          <textarea rows="2" cols="40" class="form-control" name="Comments" formControlName="Comments" placeholder="Comments"></textarea>
+          <span class="error" *ngIf="Comments.invalid && Comments.touched">Please Enter Comments
+          </span>
+        </div>
+  
+  
+      <div class="button">
+        <button [disabled]="loginFrom.invalid" type="submit" class="btn btn-primary box">Submit</button>
+        <button type="reset" class="btn btn-danger box">Reset</button>
+  
+      </div>
+      
+      
+      
+    </form>
+  
+  </div>
+  
+</body>
+  

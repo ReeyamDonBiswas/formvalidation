@@ -17,7 +17,7 @@ const routes: Routes = [
     component:RegisterComponent, path:'register'
   },
   {
-    component:UpdateComponent, path:'update'
+    component:UpdateComponent, path:'update/:id'
   },
   {
     component:ListComponent, path:''
